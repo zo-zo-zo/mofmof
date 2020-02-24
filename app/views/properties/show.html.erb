@@ -25,11 +25,11 @@
   <strong>備考</strong>
   <%= @property.remark %>
 </p>
-
+<%n = 0%>
 <% @property.stations.each do |station| %>
 
   <p>
-    <strong>最寄駅</strong>
+    <strong>最寄駅<%= n +=1 %></strong>
     <%= station.line %>
   </p>
 

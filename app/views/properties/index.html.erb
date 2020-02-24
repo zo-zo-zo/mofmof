@@ -25,6 +25,7 @@
         <td><%= property.address %></td>
         <td><%= property.age %></td>
         <td><%= property.remark %></td>
+        <% n=0 %>
         <% property.stations.each do |station| %>
           <td><%= station.line %></td>
           <td><%= station.name %></td>
