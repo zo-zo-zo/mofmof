@@ -1,0 +1,16 @@
+<h1>最寄駅一覧</h1>
+<p><%= notice %></p>
+<%= link_to '新しく最寄駅を登録する', new_station_path %>
+<table>
+    <% @stations.each do |station|%>
+      <div>路線名</div>
+      <%= station.line %>
+      <div>駅名</div>
+      <%= station.name %>
+      <div>徒歩分数</div>
+      <%= station.time %>
+      <td><%= link_to '詳細', station %></td>
+      <td><%= link_to '編集', edit_station_path(station) %></td>
+      <td><%= link_to '削除', station, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+    <% end %>
+</table>

@@ -10,6 +10,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @station = @property.stations.build
   end
 
   def edit
@@ -56,6 +57,6 @@ class PropertiesController < ApplicationController
     end
 
     def property_params
-      params.require(:property).permit(:name, :rent, :address, :age, :remark)
+      params.require(:property).permit(:name, :rent, :address, :age, :remark, stations_attributes: [:line, :name, :time])
     end
 end

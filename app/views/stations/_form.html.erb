@@ -1,0 +1,31 @@
+<%= form_with(model: @station, lodal: true) do |form| %>
+  <%if @station.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(property.errors.count, "error") %> prohibited this @station from being saved:</h2>
+
+    <ul>
+      <% @station.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="field">
+  <%= form.label :line %>
+  <%= form.text_field :line %>
+</div>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="field">
+  <%= form.label :time %>
+  <%= form.number_field :time %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
