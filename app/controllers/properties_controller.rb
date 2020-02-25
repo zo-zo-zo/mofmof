@@ -15,7 +15,7 @@ class PropertiesController < ApplicationController
 
   def edit
     n = 0
-    @station = n=+1.times { @property.stations.build }
+    @station = n+=1.times { @property.stations.build }
   end
 
   def create
