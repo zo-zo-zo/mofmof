@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @station = @property.stations.build
+    @station = 2.times { @property.stations.build }
   end
 
   def edit
@@ -59,6 +59,6 @@ class PropertiesController < ApplicationController
     end
 
     def property_params
-      params.require(:property).permit(:name, :rent, :address, :age, :remark, stations_attributes: [:line, :name, :time])
+      params.require(:property).permit(:name, :rent, :address, :age, :remark, stations_attributes: [:line, :name, :time, :id ])
     end
 end
